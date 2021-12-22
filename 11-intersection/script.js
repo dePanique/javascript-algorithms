@@ -8,7 +8,7 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    return arr1.filter((el, index, array) => array.lastIndexOf(el) === index).filter( el => arr2.includes(el));
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

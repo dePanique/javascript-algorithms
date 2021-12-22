@@ -7,8 +7,21 @@
  * 
 */
 
-function factorial(n) {
+function factorial(number) {
     // Напишите код здесь
+    if(number < 2) return 1;
+    let count = 1;
+    let reducer = 1;
+
+    function makeFactorial() {
+        if (count === number) return reducer;
+        count++;
+        reducer *= count;
+        return makeFactorial() ;
+    }
+
+    return makeFactorial();
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

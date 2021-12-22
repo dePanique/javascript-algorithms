@@ -11,7 +11,20 @@
 */
 
 function fizzBuzz(num) {
-    // Напишите код здесь
+
+  const array = Array.from({length: num}, (_, i) => i + 1 );
+
+  function checkElement(element) {
+    let count = ""
+    if (!(element%3)) count += 'fizz';
+    if (!(element%5)) count += 'buzz';
+    return (count === "") ? element : count;
+  }
+
+  array.forEach(element => {
+    console.log(checkElement(element));
+  });
+ 
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

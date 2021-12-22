@@ -14,7 +14,8 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+    const testingArray = str.toLowerCase().split('').filter(el => (el >= 'a' && el <= 'я'));
+    return testingArray.every((element, index) => element === testingArray.reverse()[index]);
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
@@ -27,6 +28,6 @@ console.log(palindrome('привет')); // false
  * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
  * но пробелы и знаки препинания не учитывает. Например:
  * 
- * palindrome('О, лета тело!'); // true
- * 
 */
+console.log(palindrome('О, лета тело!')); // true
+

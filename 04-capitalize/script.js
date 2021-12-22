@@ -8,6 +8,13 @@
 
 function capitalize(str) {
     // Напишите код здесь
+    function makeCapitalize(string) {
+        if ((string === "") || (string === " ")) return string;
+        if (string.length === 1) return string.split('').toUpperCase();
+        return string.split('')[0].toUpperCase().concat(string.split('').slice(1).join(''));
+    }
+
+    return str.split(' ').map(el => makeCapitalize(el)).join(' ')
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

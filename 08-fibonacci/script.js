@@ -9,7 +9,22 @@
 */
 
 function fibonacci(n) {
-    // Напишите код здесь
+
+    if (n === 1) return 0;
+    
+    const array = [3, 0, 1, 1];
+
+    function makeNumber(funcArray) {
+
+        if (funcArray[0] >= n) return funcArray[3];
+        funcArray.copyWithin(1, 2);
+        funcArray[3] = funcArray[1] + funcArray[2];
+        funcArray[0]++;
+      
+        return makeNumber(funcArray)
+
+    }
+    return makeNumber(array)
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

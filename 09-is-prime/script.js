@@ -9,8 +9,14 @@
  * если n простое, и false — если нет.
 */
 
-function isPrime(n) {
+function isPrime(number) {
     // Напишите код здесь
+    if (number < 2) return false;
+    if (number < 4) return true;
+    for (let i = 2; i < number; i++) {
+        if (!(number%i)) return false;
+    }
+    return true;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

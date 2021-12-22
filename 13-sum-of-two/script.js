@@ -10,6 +10,7 @@
 
 function sumOfTwo(arr, sum) {
     // Напишите код здесь
+    return arr.some((el, index) => arr.slice(0, index).concat(arr.slice(index + 1)).includes(sum - el));
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

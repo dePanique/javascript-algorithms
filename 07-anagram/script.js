@@ -8,11 +8,19 @@
  * 
 */
 
-function anagram(str1, str2) {
+function anagram(strOne, strTwo) {
     // Напишите код здесь
+    function sortToAlphabet(a, b) {
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0;
+    }
+    
+    return strOne.toLowerCase().split('').sort((a, b) => sortToAlphabet(a, b)).join('') ===  strTwo.toLowerCase().split('').sort((a, b) => sortToAlphabet(a, b)).join('');
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(anagram('finder', 'Friend')); // true
+console.log(anagram('up', 'UP')); // true
 console.log(anagram('hello', 'bye')); // false

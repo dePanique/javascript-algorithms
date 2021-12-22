@@ -6,8 +6,13 @@
  *
 */
 
-function countZeros(n) {
-    // Напишите код здесь
+function countZeros(target) {
+
+    let array = Array.from({length: target }, (_, i) => `${i + 1}`);
+    array = array.join('').split('').filter(el => el === "0");
+
+    return array.length;
+    
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
